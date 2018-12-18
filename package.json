@@ -1,6 +1,6 @@
 {
-  "name": "gulp-lodash-builder",
-  "version": "1.0.0",
+  "name": "gulp-lodash-builder-fix",
+  "version": "0.0.1",
   "description": "A tool to create a custom Lodash file",
   "dependencies": {
     "gulp": "^3.9.0",
@@ -18,19 +18,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/OneLittleRobot/gulp-lodash-builder.git"
+    "url": "https://github.com/huanghai21/gulp-lodash-builder.git"
   },
   "keywords": [
     "lodash",
     "custom",
     "gulp"
   ],
-  "author": "Kevin Thomas",
+  "author": "huanghai21",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/OneLittleRobot/gulp-lodash-builder/issues"
+    "url": "https://github.com/huanghai21/gulp-lodash-builder/issues"
   },
   "engines": {
-    "node": ">=0.10"
+    "node": ">=8.0"
   }
 }

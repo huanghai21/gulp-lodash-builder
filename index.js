@@ -18,7 +18,6 @@ function gulpLodashRequire(options) {
   var options = options ? options : {};
   options.target = options.target ? options.target : './lodash.custom.js';
   options.settings = options.settings ? options.settings : {};
-  options.build = options.build ? options.build : 'compat';
 
   var dependiencies = [];
   var search = /_\.(\w*)/g;
@@ -53,16 +52,11 @@ function gulpLodashRequire(options) {
       return item.split('.')[1]
     });
     gutil.log('Building Lodash for:', gutil.colors.green(dependiencies.join(',')));
-    childProcess.execFile(builder, [
-        '-d',
-        '-c',
-        options.build,
-        'include=' + dependiencies.join(', '),
-        'settings=' + JSON.stringify(options.settings)
-      ],
-      {maxBuffer: 1024 * 600},
-      function (error, stdout, stderr) {
-
+    const dependienciesStr = dependiencies.filter(item=>item).join(',');
+    const settings = JSON.stringify(options.settings);
+    const command = `npx lodash -d -c include=${dependienciesStr} settings=${settings}`;
+    console.log(`### exec command here : ${command} ###`);
+    childProcess.exec(command, {maxBuffer: 1024 * 600}, function (error, stdout, stderr) {
         if (error !== null) {
           that.emit('error', new PluginError(PLUGIN_NAME, error));
         }
