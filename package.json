@@ -1,6 +1,6 @@
 {
   "name": "gulp-lodash-builder-fix",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A tool to create a custom Lodash file",
   "dependencies": {
     "gulp": "4.0.0",
