@@ -8,10 +8,6 @@ var fs = require('fs');
 var path = require('path');
 var mkdirp = require('mkdirp');
 
-var pkg = require('lodash-cli/package.json'),
-  bin = pkg.bin.lodash,
-  builder = require.resolve('lodash-cli/' + bin);
-
 var PLUGIN_NAME = 'gulp-lodash-builder';
 
 function gulpLodashRequire(options) {
